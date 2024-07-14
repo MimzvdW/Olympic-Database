@@ -7,7 +7,6 @@ create table TEAM
 	Team_ID int not null Primary key identity (1,1),
 	Team_Name varchar(255),
 	Team_Colors varchar(255)
-
 );
 
 create table COACH
@@ -17,7 +16,6 @@ create table COACH
 	Coach_LName varchar(255),
 	Coach_Phone int,
 	Team_ID int not null
-
 	FOREIGN KEY(Team_ID) REFERENCES TEAM(Team_ID)
 );
 
@@ -31,7 +29,6 @@ create table PARENT
 	Parent_City varchar(255),
 	Parent_State varchar(255),
 	Parent_Zip int
-
 );
 
 create table PLAYER
@@ -41,7 +38,6 @@ create table PLAYER
 	Player_LName varchar(255),
 	Player_Age int,
 	Team_ID int not null
-
 	FOREIGN KEY(Team_ID) REFERENCES TEAM(Team_ID)
 );
 
@@ -49,7 +45,6 @@ create table REGISTERS
 (
 	Parent_ID int not null,
 	Player_ID int not null
-
 	FOREIGN KEY(Parent_ID) REFERENCES PARENT(Parent_ID),
 	FOREIGN KEY(Player_ID) REFERENCES PLAYER(Player_ID)
 );
